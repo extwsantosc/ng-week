@@ -26,6 +26,7 @@ export class AppComponent implements OnInit, OnDestroy {
         this.isLoading = false;
       },
       error: (err) => {
+        
         console.error('An error occurred', err);
         
       }
