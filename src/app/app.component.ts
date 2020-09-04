@@ -27,6 +27,7 @@ export class AppComponent implements OnInit, OnDestroy {
       },
       error: (err) => {
         console.error('An error occurred', err);
+        
       }
     });
   }
