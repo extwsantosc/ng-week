@@ -1,0 +1,15 @@
+<div class="card">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img class="card-img-top" height="100%" [src]="character?.image" [alt]="character?.name" loading="lazy">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body  container-fluid">
+        <h5 class="card-title">{{character?.name |uppercase}}</h5>
+        <p class="card-text">Gender: {{character?.gender | lowercase}}</p>
+        <p class="card-text">Species: {{character?.species}}</p>
+        <p class="card-text">Created: {{character?.created | date:'fullDate' |uppercase}}</p>
+      </div>
+    </div>
+  </div>
+</div>
