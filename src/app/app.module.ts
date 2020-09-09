@@ -3,10 +3,14 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FilterByPipe } from './pipes/filter-by.pipe';
+import { RickMortyComponent } from './rick-morty/rick-morty.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FilterByPipe,
+    RickMortyComponent
   ],
   imports: [
     BrowserModule,
