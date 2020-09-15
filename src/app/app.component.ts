@@ -1,39 +1,30 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CharactersService } from './service/characters.service';
 import { Character } from './model/character.model';
-import {of, Subscription, throwError} from 'rxjs';
+import {of, throwError} from 'rxjs';
 import { NgxSpinnerService } from 'ngx-spinner';
 import {catchError, concatMap, finalize, take, tap} from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit, OnDestroy {
+export class AppComponent implements OnInit {
   constructor(private readonly charactersService: CharactersService,
               private readonly spinner: NgxSpinnerService) { }
 
-  public characters: Character[];
-
-  private subscription: Subscription;
+  public characters$: Observable<Character[]>;
 
   ngOnInit(): void {
-    this.spinner.show();
-    this.charactersService.getAll().pipe(
-      concatMap(() => throwError('ddd')),
+    this.spinner.hide();
+    this.characters$ = this.charactersService.getAll().pipe(
       catchError(err => {
         console.error('An error occurred', err);
-        return of();
+        return of([]);
       }),
       finalize(() => this.spinner.hide()),
-      take(1),
-    ).subscribe();
+    );
   }
-
-  ngOnDestroy(): void {
-    this.subscription.unsubscribe();
-  }
-
-
 }

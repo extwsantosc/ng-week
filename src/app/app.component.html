@@ -1,33 +1,57 @@
 <ngx-spinner [fullScreen]="true" bdColor="rgba(0, 0, 0, 0.8)" color="#fff" size="medium" type="square-jelly-box"><p
   style="color: white"> Cargando personajes... </p>
 </ngx-spinner>
-<div class="container">
+<div class="container" *ngIf="characters$ | async as characters">
+  <div class="row col">
+    <h1>Rick and Morty series</h1>
+  </div>
+
   <div class="row">
-    <h1 style=" color: white">Rick and Morty</h1>
-    <div class="input-group mb-3" style="margin-left: 15px; margin-right: 15px;">
-      <input aria-describedby="button-addon2" aria-label="Username" class="form-control" placeholder="Username"
-             type="text">
-      <div class="input-group-append">
-        <button class="btn btn-secondary" id="button-addon2" type="button">Search</button>
+    <div class="row col">
+      <h4>Category gender: Male</h4>
+      <hr />
+    </div>
+    <div class="row">
+      <div class="col-xl-4 col-6 col-sm-6 mb-2" *ngFor="let character of characters|filterBy:'gender':'male'|slice:0:3">
+        <app-rick-morty class="clearfix" [character]="character"></app-rick-morty>
       </div>
     </div>
   </div>
+
   <div class="row">
-    <div *ngFor="let character of characters" class="col-xl-4 col-6 col-sm-6 mb-2">
-      <div class="card">
-        <div class="row no-gutters">
-          <div class="col-md-4">
-            <img [alt]="character.name" [src]="character.image" class="card-img-top" height="100%" loading="lazy">
-          </div>
-          <div class="col-md-8">
-            <div class="card-body  container-fluid">
-              <h5 class="card-title">{{character.name}}</h5>
-              <p class="card-text">Gender: {{character.gender}}</p>
-              <p class="card-text">Species: {{character.species}}</p>
-            </div>
-          </div>
-        </div>
+    <div class="row col">
+      <h4>Category gender: Female</h4>
+    </div>
+    <div class="row">
+      <div class="col col-xl-4 col-6 col-sm-6 mb-2"
+           *ngFor="let character of characters|filterBy:'gender':'female'|slice:0:3">
+        <app-rick-morty [character]="character"></app-rick-morty>
       </div>
     </div>
   </div>
+
+  <div class="row">
+    <div class="row col">
+      <h4>Category species: Human</h4>
+    </div>
+    <div class="row">
+      <div class="col col-xl-4 col-6 col-sm-6 mb-2"
+           *ngFor="let character of characters|filterBy:'species':'human'|slice:0:3">
+        <app-rick-morty [character]="character"></app-rick-morty>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="row col">
+      <h4>Category species: Alien</h4>
+    </div>
+    <div class="row">
+      <div class="col col-xl-4 col-6 col-sm-6 mb-2"
+           *ngFor="let character of characters|filterBy:'species':'Alien'|slice:0:3">
+        <app-rick-morty [character]="character"></app-rick-morty>
+      </div>
+    </div>
+  </div>
+
 </div>

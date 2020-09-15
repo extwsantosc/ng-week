@@ -5,10 +5,14 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FilterByPipe } from './pipes/filter-by.pipe';
+import { RickMortyComponent } from './rick-morty/rick-morty.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FilterByPipe,
+    RickMortyComponent
   ],
   imports: [
     BrowserModule,
