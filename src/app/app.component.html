@@ -1,20 +1,23 @@
+<ngx-spinner [fullScreen]="true" bdColor="rgba(0, 0, 0, 0.8)" color="#fff" size="medium" type="square-jelly-box"><p
+  style="color: white"> Cargando personajes... </p>
+</ngx-spinner>
 <div class="container">
   <div class="row">
     <h1 style=" color: white">Rick and Morty</h1>
     <div class="input-group mb-3" style="margin-left: 15px; margin-right: 15px;">
-      <input type="text" class="form-control" placeholder="Username" aria-label="Username"
-        aria-describedby="button-addon2">
+      <input aria-describedby="button-addon2" aria-label="Username" class="form-control" placeholder="Username"
+             type="text">
       <div class="input-group-append">
-        <button class="btn btn-secondary" type="button" id="button-addon2">Search</button>
+        <button class="btn btn-secondary" id="button-addon2" type="button">Search</button>
       </div>
     </div>
   </div>
   <div class="row">
-    <div class="col-xl-4 col-6 col-sm-6 mb-2" *ngFor="let character of characters">
+    <div *ngFor="let character of characters" class="col-xl-4 col-6 col-sm-6 mb-2">
       <div class="card">
         <div class="row no-gutters">
           <div class="col-md-4">
-            <img class="card-img-top" height="100%" [src]="character.image" [alt]="character.name" loading="lazy">
+            <img [alt]="character.name" [src]="character.image" class="card-img-top" height="100%" loading="lazy">
           </div>
           <div class="col-md-8">
             <div class="card-body  container-fluid">
