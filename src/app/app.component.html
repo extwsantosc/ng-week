@@ -1,54 +1,64 @@
-<div class="container" *ngIf="characters$ | async as characters">
-  <div class="row col">
-    <h1>Rick and Morty series</h1>
-  </div>
+<div class="wrapper">
+  <div class="grid" *ngIf="characters$ | async as characters">
 
-  <div class="row">
-    <div class="row col">
-      <h4>Category gender: Male</h4>
-      <hr />
+    <div class="titulo header">
+      <h1>Rick and Morty series</h1>
     </div>
-    <div class="row">
-      <div class="col-xl-4 col-6 col-sm-6 mb-2" *ngFor="let character of characters|filterBy:'gender':'male'|slice:0:3">
-        <app-rick-morty class="clearfix" [character]="character"></app-rick-morty>
+
+    <div class="body">
+      <div>
+        <div class="subtitulo">
+          <h4 >Category gender: Male</h4>
+        </div>
+        <div>
+          <div *ngFor="let character of characters|filterBy:'gender':'male'|slice:0:3">
+            <!-- <app-rick-morty class="clearfix" [character]="character"></app-rick-morty> -->
+            <character-component [character]="character"></character-component>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="subtitulo">
+          <h4>Category gender: Female</h4>
+        </div>
+        <div>
+          <div
+            *ngFor="let character of characters|filterBy:'gender':'female'|slice:0:3">
+            <!-- <app-rick-morty [character]="character"></app-rick-morty> -->
+            <character-component [character]="character"></character-component>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="subtitulo">
+          <h4>Category species: Human</h4>
+        </div>
+        <div>
+          <div
+            *ngFor="let character of characters|filterBy:'species':'human'|slice:0:3">
+            <!-- <app-rick-morty [character]="character"></app-rick-morty> -->
+            <character-component [character]="character"></character-component>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="subtitulo">
+          <h4>Category species: Alien</h4>
+        </div>
+        <div>
+          <div
+            *ngFor="let character of characters|filterBy:'species':'Alien'|slice:0:3">
+            <!-- <app-rick-morty [character]="character"></app-rick-morty> -->
+            <character-component [character]="character"></character-component>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-
-  <div class="row">
-    <div class="row col">
-      <h4>Category gender: Female</h4>
-    </div>
-    <div class="row">
-      <div class="col col-xl-4 col-6 col-sm-6 mb-2"
-        *ngFor="let character of characters|filterBy:'gender':'female'|slice:0:3">
-        <app-rick-morty [character]="character"></app-rick-morty>
-      </div>
+    <div class="footer titulo">
+      <p>Ceiba Software Clips - NgWeek - Ningún derecho reservado :)</p>
     </div>
   </div>
-
-  <div class="row">
-    <div class="row col">
-      <h4>Category species: Human</h4>
-    </div>
-    <div class="row">
-      <div class="col col-xl-4 col-6 col-sm-6 mb-2"
-        *ngFor="let character of characters|filterBy:'species':'human'|slice:0:3">
-        <app-rick-morty [character]="character"></app-rick-morty>
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="row col">
-      <h4>Category species: Alien</h4>
-    </div>
-    <div class="row">
-      <div class="col col-xl-4 col-6 col-sm-6 mb-2"
-        *ngFor="let character of characters|filterBy:'species':'Alien'|slice:0:3">
-        <app-rick-morty [character]="character"></app-rick-morty>
-      </div>
-    </div>
-  </div>
-
 </div>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CardElement</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="stylesheet" href="styles.css"></head>
+<body>
+  <character-component id="character"></character-component>
+  <character-component id="character2"></character-component>
+
+  <script src="./character-element.js"></script>
+  <script>
+    const infoCharacter = {
+      created: new Date ('2017-11-04T18:48:46.250Z'),
+      episode: [
+        'https://rickandmortyapi.com/api/episode/1',
+        'https://rickandmortyapi.com/api/episode/2'
+      ],
+      gender: 'Male',
+      id: 1,
+      image: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
+      location: {
+        name: 'Earth (Replacement Dimension)',
+        url: 'https://rickandmortyapi.com/api/location/20'
+      },
+      name: 'Rick Sanchez',
+      origin: {
+        name: 'Earth (C-137)',
+        'url': 'https://rickandmortyapi.com/api/location/1'
+      },
+      species: 'Human',
+      status: 'Alive',
+      type: '',
+      url: 'https://rickandmortyapi.com/api/character/1',
+    }
+
+    const chr = document.querySelector('#character');
+    chr.character = infoCharacter;
+    const chr2 = document.querySelector('#character2');
+    chr2.character = infoCharacter;
+
+
+
+  </script>
+</body>
+</html>

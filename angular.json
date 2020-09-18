@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ng-week"
+    }
+  },
+  "defaultProject": "ng-week",
+  "cli": {
+    "analytics": false
+  }
 }

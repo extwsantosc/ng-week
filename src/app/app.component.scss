@@ -1,5 +1,27 @@
-h4,
-h1 {
+.titulo {
+  background: white;
+  background-image: url(https://www.hdwallpaper.nu/wp-content/uploads/2018/11/rick_and_morty-2-660x330.jpg);
+  min-height: 15vh;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: white;
-  border-bottom: 2px solid white;
+  border-radius: .5rem;;
+  margin-bottom: .5rem;
+}
+.footer {
+  min-height: 8vh;
+}
+.subtitulo {
+  font-size: 1.5rem;
+  color: black;
+  background-color: pink;
+  padding: 1rem;
+  text-align: center;
+  margin-bottom: .5rem;
+}
+
+.wrapper {
+  padding: 1rem;
 }

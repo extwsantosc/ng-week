@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CharactersService } from './service/characters.service';
 import { Character } from './model/character.model';
 import { Subscription, Observable } from 'rxjs';
+import '../Chararter-Element/character-element';
 
 @Component({
   selector: 'app-root',
